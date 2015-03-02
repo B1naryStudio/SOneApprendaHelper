@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using SOneApprendaHelper.Models;
 using SOneApprendaHelper.Services;
 
@@ -16,7 +17,8 @@ namespace SOneApprendaHelper.Controllers
             if (settings == null)
                 return View();
 
-            var links = ApprendaLinksGenerator.Instance.GenerateAllLinks(settings);
+            var links = ApprendaLinksGenerator.Instance.GenerateAllLinks(settings).ToList();
+            links.Sort(ApprendaLink.NameComparer);
             return View(links);
         }
 

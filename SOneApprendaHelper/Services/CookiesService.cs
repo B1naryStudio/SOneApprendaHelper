@@ -7,7 +7,7 @@ namespace SOneApprendaHelper.Services
 {
     public class CookiesService
     {
-        public T Get<T>(HttpCookieCollection cookies, string key) where T : new()
+        public T Get<T>(HttpCookieCollection cookies, string key)
         {
             if (cookies.AllKeys.Contains(key))
             {
@@ -18,7 +18,7 @@ namespace SOneApprendaHelper.Services
                 }
             }
 
-            return new T();
+            return default(T);
         }
 
         public void Set<T>(HttpCookieCollection cookies, string key, T value, DateTime expires)
