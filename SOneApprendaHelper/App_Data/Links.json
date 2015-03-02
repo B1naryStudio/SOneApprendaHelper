@@ -2,16 +2,16 @@
     {
         "Id": "SqlConsole",
         "Name": "SQL Console",
-        "Pattern": "https://apps.swissphone-sone.ch/developer/Pages/Applications/Version/ControlPanel/SQLConsole/?vid={vid}"
+        "Pattern": "{host}developer/Pages/Applications/Version/ControlPanel/SQLConsole/?vid={vid}"
     },
     {
         "Id": "Lifecycle",
         "Name": "Lifecycle",
-        "Pattern": "https://apps.swissphone-sone.ch/developer/Pages/Applications/Version/Lifecycle/default.aspx?vid={vid}"
+        "Pattern": "{host}developer/Pages/Applications/Version/Lifecycle/default.aspx?vid={vid}"
     },
     {
         "Id": "Logs",
         "Name": "Logs",
-        "Pattern": "https://apps.swissphone-sone.ch/developer/Pages/Logs/Logs.aspx"
+        "Pattern": "{host}developer/Pages/Logs/Logs.aspx"
     }
 ]

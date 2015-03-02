@@ -6,14 +6,12 @@ namespace SOneApprendaHelper.Controllers
 {
     public class ApprendaLinksController : Controller
     {
-        private const string APPRENDA_SETTINGS_COOKIES_KEY = "ApprendaSettings";
-
         private readonly CookiesService _cookiesService = new CookiesService();
 
         public ActionResult List()
         {
             var settings = _cookiesService.Get<ApprendaSettings>(
-                ControllerContext.HttpContext.Request.Cookies, APPRENDA_SETTINGS_COOKIES_KEY);
+                ControllerContext.HttpContext.Request.Cookies, ApprendaSettings.SETTINGS_KEY);
 
             if (settings == null)
                 return View();
@@ -25,7 +23,7 @@ namespace SOneApprendaHelper.Controllers
         public ActionResult Navigate(string id)
         {
             var settings = _cookiesService.Get<ApprendaSettings>(
-                 ControllerContext.HttpContext.Request.Cookies, APPRENDA_SETTINGS_COOKIES_KEY);
+                 ControllerContext.HttpContext.Request.Cookies, ApprendaSettings.SETTINGS_KEY);
 
             if (settings == null)
                 return RedirectToAction("List");

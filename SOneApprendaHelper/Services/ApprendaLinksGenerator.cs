@@ -63,7 +63,16 @@ namespace SOneApprendaHelper.Services
 
         private static string generateUrl(string pattern, ApprendaSettings settings)
         {
-            return pattern.Replace("{aid}", settings.ApplicationId).Replace("{vid}", settings.ApplicationVersionId);
+            // Make sure that host has a '/' at the end.
+            var host = settings.ApprendaBaseUrl;
+            if (!string.IsNullOrEmpty(host) && host.Last() != '/')
+            {
+                host += '/';
+            }
+
+            return pattern.Replace("{host}", host)
+                          .Replace("{aid}", settings.ApplicationId)
+                          .Replace("{vid}", settings.ApplicationVersionId);
         }
 
         #endregion

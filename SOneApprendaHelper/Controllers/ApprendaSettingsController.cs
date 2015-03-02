@@ -7,15 +7,13 @@ namespace SOneApprendaHelper.Controllers
 {
     public class ApprendaSettingsController : Controller
     {
-        private const string APPRENDA_SETTINGS_COOKIES_KEY = "ApprendaSettings";
-
         private readonly CookiesService _cookiesService = new CookiesService();
 
         [HttpGet]
         public ActionResult Edit()
         {
             var settings = _cookiesService.Get<ApprendaSettings>(
-                ControllerContext.HttpContext.Request.Cookies, APPRENDA_SETTINGS_COOKIES_KEY);
+                ControllerContext.HttpContext.Request.Cookies, ApprendaSettings.SETTINGS_KEY);
 
             return View(settings);
         }
@@ -27,7 +25,7 @@ namespace SOneApprendaHelper.Controllers
             {
                 _cookiesService.Set(
                     ControllerContext.HttpContext.Response.Cookies,
-                    APPRENDA_SETTINGS_COOKIES_KEY,
+                    ApprendaSettings.SETTINGS_KEY,
                     settings,
                     DateTime.MaxValue);
 

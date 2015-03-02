@@ -4,15 +4,28 @@ namespace SOneApprendaHelper.Models
 {
     public class ApprendaSettings
     {
-        // d113c1aa-e2bc-e411-80c6-0050560115d4
+        public const string SETTINGS_KEY = "ApprendaSettings";
+
+        public ApprendaSettings()
+        {
+            ApprendaBaseUrl = @"https://apps.swissphone-sone.ch/";
+        }
+
+        // {host}
         [Required]
-        [RegularExpression(@"\w{8}-\w{4}-\w{4}-\w{4}-\w{12}")]
+        [DataType(DataType.Url)]
+        [Display(Name = "Apprenda Base URL")]
+        public string ApprendaBaseUrl { get; set; }
+
+        // {aid}
+        [Required]
+        [RegularExpression(@"\w{8}-\w{4}-\w{4}-\w{4}-\w{12}", ErrorMessage = "The field Application ID must match the format 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'.")]
         [Display(Name = "Application ID")]
         public string ApplicationId { get; set; }
 
-        // d313c1aa-e2bc-e411-80c6-0050560115d4
+        // {vid}
         [Required]
-        [RegularExpression(@"\w{8}-\w{4}-\w{4}-\w{4}-\w{12}")]
+        [RegularExpression(@"\w{8}-\w{4}-\w{4}-\w{4}-\w{12}", ErrorMessage = "The field Application Version ID must match the format 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'.")]
         [Display(Name = "Application Version ID")]
         public string ApplicationVersionId { get; set; }
     }
