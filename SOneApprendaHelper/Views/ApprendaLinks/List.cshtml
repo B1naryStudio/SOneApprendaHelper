@@ -26,7 +26,7 @@ else
         {
             <tr>
                 <td>
-                    <a href="@Html.DisplayFor(modelItem => item.Link)">@Html.DisplayFor(modelItem => item.Name)</a>
+                    @Html.ActionLink(item.Name, "Navigate", new { id = item.Id }, new { target = "_blank" })
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Link)

@@ -4,12 +4,11 @@ namespace SOneApprendaHelper.Models
 {
     public class ApprendaLink
     {
-        [Required]
-        [StringLength(1)]
+        public string Id { get; set; }
+
         [Display(Name = "Name")]
         public string Name { get; set; }
 
-        [Editable(false)]
         [Display(Name = "URL")]
         public string Link { get; set; }
     }

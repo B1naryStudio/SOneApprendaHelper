@@ -18,8 +18,23 @@ namespace SOneApprendaHelper.Controllers
             if (settings == null)
                 return View();
 
-            var links = ApprendaLinksGenerator.Instance.Generate(settings);
+            var links = ApprendaLinksGenerator.Instance.GenerateAllLinks(settings);
             return View(links);
+        }
+
+        public ActionResult Navigate(string id)
+        {
+            var settings = _cookiesService.Get<ApprendaSettings>(
+                 ControllerContext.HttpContext.Request.Cookies, APPRENDA_SETTINGS_COOKIES_KEY);
+
+            if (settings == null)
+                return RedirectToAction("List");
+
+            var url = ApprendaLinksGenerator.Instance.GenerateUrl(id, settings);
+            if (url == null)
+                return RedirectToAction("List");
+
+            return Redirect(url);
         }
     }
 }
