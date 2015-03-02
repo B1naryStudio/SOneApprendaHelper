@@ -1,0 +1,14 @@
+﻿{
+    "SqlConsole": {
+        "Name": "SQL Console",
+        "Pattern": "https://apps.swissphone-sone.ch/developer/Pages/Applications/Version/ControlPanel/SQLConsole/?vid={vid}"
+    },
+    "Lifecycle": {
+        "Name": "Lifecycle",
+        "Pattern": "https://apps.swissphone-sone.ch/developer/Pages/Applications/Version/Lifecycle/default.aspx?vid={vid}"
+    },
+    "Logs": {
+        "Name": "Logs",
+        "Pattern": "https://apps.swissphone-sone.ch/developer/Pages/Logs/Logs.aspx"
+    }
+}
