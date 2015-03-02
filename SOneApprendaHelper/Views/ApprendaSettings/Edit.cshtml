@@ -1,7 +1,12 @@
 ﻿@model SOneApprendaHelper.Models.ApprendaSettings
 
 @{
-    ViewBag.Title = "Edit Apprenda Settings";
+    ViewBag.Title = "Apprenda Settings";
+}
+
+@if (ViewBag.AlertMessage != null)
+{
+    <div class="alert alert-success">@ViewBag.AlertMessage</div>
 }
 
 <h2>Apprenda Settings</h2>

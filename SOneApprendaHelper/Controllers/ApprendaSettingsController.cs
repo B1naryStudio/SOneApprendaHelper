@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Newtonsoft.Json;
 using SOneApprendaHelper.Models;
+using SOneApprendaHelper.Services;
 
 namespace SOneApprendaHelper.Controllers
 {
@@ -11,19 +9,13 @@ namespace SOneApprendaHelper.Controllers
     {
         private const string APPRENDA_SETTINGS_COOKIES_KEY = "ApprendaSettings";
 
+        private readonly CookiesService _cookiesService = new CookiesService();
+
         [HttpGet]
         public ActionResult Edit()
         {
-            ApprendaSettings settings = null;
-
-            if (ControllerContext.HttpContext.Request.Cookies.AllKeys.Contains(APPRENDA_SETTINGS_COOKIES_KEY))
-            {
-                var cookies = ControllerContext.HttpContext.Request.Cookies[APPRENDA_SETTINGS_COOKIES_KEY];
-                if (cookies != null && !string.IsNullOrEmpty(cookies.Value))
-                {
-                    settings = JsonConvert.DeserializeObject<ApprendaSettings>(cookies.Value);
-                }
-            }
+            var settings = _cookiesService.Get<ApprendaSettings>(
+                ControllerContext.HttpContext.Request.Cookies, APPRENDA_SETTINGS_COOKIES_KEY);
 
             return View(settings);
         }
@@ -33,9 +25,13 @@ namespace SOneApprendaHelper.Controllers
         {
             if (ModelState.IsValid)
             {
-                var value = JsonConvert.SerializeObject(settings);
-                var cookie = new HttpCookie(APPRENDA_SETTINGS_COOKIES_KEY, value) { Expires = new DateTime(3000, 1, 1) };
-                ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+                _cookiesService.Set(
+                    ControllerContext.HttpContext.Response.Cookies,
+                    APPRENDA_SETTINGS_COOKIES_KEY,
+                    settings,
+                    DateTime.MaxValue);
+
+                ViewBag.AlertMessage = "Apprenda Settings have been successfully saved.";
             }
 
             return View();
