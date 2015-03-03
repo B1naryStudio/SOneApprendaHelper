@@ -4,14 +4,6 @@
     ViewBag.Title = "Home Page";
 }
 
-<h2>Extensions</h2>
-
-<div class="col-md-12">
-    @Html.ActionLink("Get Chrome extension", "GetChromeExtension", null, new { @class = "btn btn-default" })
-</div>
-
-<hr/>
-
 <h2>Configs</h2>
 
 <div class="col-md-12">
@@ -21,7 +13,7 @@
     }
     else
     {
-        @Html.ActionLink("Get Client App Config", "GetClientAppConfig", null, new { @class = "btn btn-default", target = "_blank" })
+        @Html.ActionLink("Client App Config", "GetClientAppConfig", null, new { @class = "btn btn-default", target = "_blank" })
     }
 </div>
 
@@ -35,7 +27,7 @@
         <div class="form-group">
             <label class="control-label col-md-1" for="scriptRoleInput">Role</label>
             <div class="col-md-2">
-                <input id="scriptRoleInput" class="form-control" type="text" ng-model="role" />
+                <input id="scriptRoleInput" class="form-control" type="text" ng-model="role"/>
             </div>
             <div class="checkbox col-md-2">
                 <label>
@@ -50,6 +42,14 @@
             </div>
         </div>
     </div>
+</div>
+
+<hr/>
+
+<h2>Extensions</h2>
+
+<div class="col-md-12">
+    @Html.ActionLink("Chrome Extension", "GetChromeExtension", null, new { @class = "btn btn-default" })
 </div>
 
 @section scripts
