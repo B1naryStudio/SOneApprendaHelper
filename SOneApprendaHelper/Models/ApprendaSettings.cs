@@ -39,5 +39,11 @@ namespace SOneApprendaHelper.Models
         [RegularExpression(@"\w{8}-\w{4}-\w{4}-\w{4}-\w{12}", ErrorMessage = "The field Application Version ID must match the format 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'.")]
         [Display(Name = "Application Version ID")]
         public string ApplicationVersionId { get; set; }
+
+        // {gid}
+        [Required]
+        [RegularExpression(@"\w{8}-\w{4}-\w{4}-\w{4}-\w{12}", ErrorMessage = "The field Subscription Group ID must match the format 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'.")]
+        [Display(Name = "Subscription Group ID")]
+        public string SubscriptionGroupId { get; set; }
     }
 }
