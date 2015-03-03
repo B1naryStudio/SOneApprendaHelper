@@ -23,5 +23,20 @@
         "Id": "WebServices",
         "Name": "Web Services",
         "Pattern": "{host}developer/Pages/Applications/Version/ControlPanel/Services/?vid={vid}"
+    },
+    {
+        "Id": "AccountApps",
+        "Name": "Account Applications",
+        "Pattern": "{host}account/Pages/Applications/"
+    },
+    {
+        "Id": "OperatorService",
+        "Name": "Operator Service",
+        "Pattern": "{host}/api/services/json/r/{alias}(v{ver})/Gateway/IAdministrationService/operator"
+    },
+    {
+        "Id": "GatewayPermissions",
+        "Name": "Gateway Permissions",
+        "Pattern": "{host}api/services/json/r/{alias}(v{ver})/Gateway/IGateway/permissions"
     }
 ]

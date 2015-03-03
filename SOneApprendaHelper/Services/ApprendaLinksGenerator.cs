@@ -71,7 +71,9 @@ namespace SOneApprendaHelper.Services
             }
 
             return pattern.Replace("{host}", host)
+                          .Replace("{alias}", settings.ApplicationAlias)
                           .Replace("{aid}", settings.ApplicationId)
+                          .Replace("{ver}", settings.ApplicationVersion.ToString())
                           .Replace("{vid}", settings.ApplicationVersionId);
         }
 

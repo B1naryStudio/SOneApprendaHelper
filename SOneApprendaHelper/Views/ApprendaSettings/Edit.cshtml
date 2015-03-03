@@ -28,10 +28,26 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(m => m.ApplicationAlias, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(m => m.ApplicationAlias, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.ApplicationAlias, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(m => m.ApplicationId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-4">
                 @Html.EditorFor(m => m.ApplicationId, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(m => m.ApplicationId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.ApplicationVersion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(m => m.ApplicationVersion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.ApplicationVersion, "", new { @class = "text-danger" })
             </div>
         </div>
 
