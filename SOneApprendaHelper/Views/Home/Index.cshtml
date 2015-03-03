@@ -29,13 +29,13 @@
 
 <h2>Scripts</h2>
 
-<div class="form-horizontal col-md-12" ng-app>
+<div class="form-horizontal col-md-12">
     <h3>Set all permissions</h3>
-    <div ng-controller="SetAllPermissionsCtrl">
+    <div ng-app ng-init="role='Developer'; check=true">
         <div class="form-group">
             <label class="control-label col-md-1" for="scriptRoleInput">Role</label>
             <div class="col-md-2">
-                <input id="scriptRoleInput" class="form-control" type="text" ng-model="role"/>
+                <input id="scriptRoleInput" class="form-control" type="text" ng-model="role" />
             </div>
             <div class="checkbox col-md-2">
                 <label>
@@ -46,7 +46,7 @@
 
         <div class="form-group">
             <div class="col-md-12">
-                <textarea class="form-control" rows="1">javascript: (function() { var a = document.querySelectorAll('[rolename="{{role}}"] [type="checkbox"]'); for (var i = 0; i < a.length; i++) { if (a[i].checked == "{{check}}") { a[i].click(); } } })()</textarea>
+                <textarea class="form-control" rows="2">javascript: (function() { var a = document.querySelectorAll('[rolename="{{role}}"] [type="checkbox"]'); for (var i = 0; i < a.length; i++) { if (a[i].checked != "{{check}}") { a[i].click(); } } })()</textarea>
             </div>
         </div>
     </div>
@@ -54,13 +54,5 @@
 
 @section scripts
 {
-    @Scripts.Render("~/Scripts/angular.js")
-
-    <script type="text/javascript">
-        angular.module('ApprendaScriptsApp', [])
-            .controller('SetAllPermissionsCtrl', function($scope) {
-                $scope.role = "Developer";
-                $scope.check = "true";
-            });
-    </script>
+    @Scripts.Render("~/bundles/angular")
 }
