@@ -39,7 +39,7 @@
             </div>
             <div class="checkbox col-md-2">
                 <label>
-                    <input type="checkbox" ng-model="check"> Enable
+                    <input type="checkbox" ng-model="check"> Enable permissions
                 </label>
             </div>
         </div>
@@ -54,10 +54,13 @@
 
 @section scripts
 {
+    @Scripts.Render("~/Scripts/angular.js")
+
     <script type="text/javascript">
-        function SetAllPermissionsCtrl($scope) {
-            $scope.role = "Developer";
-            $scope.check = "true";
-        }
+        angular.module('ApprendaScriptsApp', [])
+            .controller('SetAllPermissionsCtrl', function($scope) {
+                $scope.role = "Developer";
+                $scope.check = "true";
+            });
     </script>
 }
