@@ -6,6 +6,11 @@ namespace SOneApprendaHelper.Models
     {
         public const string SETTINGS_KEY = "ApprendaSettings";
 
+        public ApprendaSettings()
+        {
+            ApprendaBaseUrl = @"https://apps.swissphone-sone.ch/";
+        }
+
         // {host}
         [Required]
         [DataType(DataType.Url)]

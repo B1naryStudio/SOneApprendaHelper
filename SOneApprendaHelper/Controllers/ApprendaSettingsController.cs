@@ -13,7 +13,7 @@ namespace SOneApprendaHelper.Controllers
         public ActionResult Edit()
         {
             var settings = _cookiesService.Get<ApprendaSettings>(
-                ControllerContext.HttpContext.Request.Cookies, ApprendaSettings.SETTINGS_KEY);
+                ControllerContext.HttpContext.Request.Cookies, ApprendaSettings.SETTINGS_KEY) ?? new ApprendaSettings();
 
             return View(settings);
         }
