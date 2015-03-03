@@ -6,7 +6,7 @@
 
 <h2>Extensions</h2>
 
-<div>
+<div class="col-md-12">
     @Html.ActionLink("Get Chrome extension", "GetChromeExtension", null, new { @class = "btn btn-default" })
 </div>
 
@@ -14,18 +14,50 @@
 
 <h2>Configs</h2>
 
-@if (!Model)
-{
-    <span>Please, set the @Html.ActionLink("Apprenda Settings", "Edit", "ApprendaSettings").</span>
-}
-else
-{
-    @Html.ActionLink("Get Client App Config", "GetClientAppConfig", null, new { @class = "btn btn-default", target = "_blank" })
-}
+<div class="col-md-12">
+    @if (!Model)
+    {
+        <span>Please, set the @Html.ActionLink("Apprenda Settings", "Edit", "ApprendaSettings").</span>
+    }
+    else
+    {
+        @Html.ActionLink("Get Client App Config", "GetClientAppConfig", null, new { @class = "btn btn-default", target = "_blank" })
+    }
+</div>
 
-<hr />
+<hr/>
 
 <h2>Scripts</h2>
 
-<h3>Set all permissions</h3>
-<textarea class="form-control" rows="1">javascript: (function() { var a = document.querySelectorAll('[rolename="Developer"] [type="checkbox"]'); for (var i = 0; i < a.length; i++) { if (!a[i].checked) { a[i].click(); } } })()</textarea>
+<div class="form-horizontal col-md-12" ng-app>
+    <h3>Set all permissions</h3>
+    <div ng-controller="SetAllPermissionsCtrl">
+        <div class="form-group">
+            <label class="control-label col-md-1" for="scriptRoleInput">Role</label>
+            <div class="col-md-2">
+                <input id="scriptRoleInput" class="form-control" type="text" ng-model="role"/>
+            </div>
+            <div class="checkbox col-md-2">
+                <label>
+                    <input type="checkbox" ng-model="check"> Enable
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <textarea class="form-control" rows="1">javascript: (function() { var a = document.querySelectorAll('[rolename="{{role}}"] [type="checkbox"]'); for (var i = 0; i < a.length; i++) { if (a[i].checked == "{{check}}") { a[i].click(); } } })()</textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        function SetAllPermissionsCtrl($scope) {
+            $scope.role = "Developer";
+            $scope.check = "true";
+        }
+    </script>
+}
