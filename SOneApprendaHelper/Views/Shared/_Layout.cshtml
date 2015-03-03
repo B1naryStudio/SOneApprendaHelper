@@ -20,9 +20,9 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("Apprenda Links", "List", "ApprendaLinks")</li>
-                <li>@Html.ActionLink("Apprenda Settings", "Edit", "ApprendaSettings")</li>
+                <li><a href="@Url.Action("Index", "Home")"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li><a href="@Url.Action("List", "ApprendaLinks")"><span class="glyphicon glyphicon-random"></span></a></li>
+                <li><a href="@Url.Action("Edit", "ApprendaSettings")"><span class="glyphicon glyphicon-cog"></span></a></li>
             </ul>
         </div>
     </div>
