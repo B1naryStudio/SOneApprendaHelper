@@ -29,7 +29,7 @@ namespace SOneApprendaHelper.Controllers
                     settings,
                     DateTime.MaxValue);
 
-                ViewBag.AlertMessage = "Apprenda Settings have been successfully saved.";
+                ViewBag.AlertMessage = "Apprenda Settings have been saved successfully.";
             }
 
             return View();
