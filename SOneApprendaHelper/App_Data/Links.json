@@ -13,5 +13,15 @@
         "Id": "Logs",
         "Name": "Logs",
         "Pattern": "{host}developer/Pages/Logs/Logs.aspx"
+    },
+    {
+        "Id": "CloudControl",
+        "Name": "Cloud Control",
+        "Pattern": "{host}developer/Pages/Applications/Version/ControlPanel/default.aspx?vid={vid}"
+    },
+    {
+        "Id": "WebServices",
+        "Name": "Web Services",
+        "Pattern": "{host}developer/Pages/Applications/Version/ControlPanel/Services/?vid={vid}"
     }
 ]

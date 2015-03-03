@@ -8,5 +8,12 @@ namespace SOneApprendaHelper.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public FileResult GetChromeExtension()
+        {
+            var path = HttpContext.Server.MapPath("~/App_Data/ApprendaDeveloperPanel.crx");
+            return File(path, "application/x-chrome-extension");
+        }
     }
 }
