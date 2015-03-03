@@ -1,0 +1,62 @@
+﻿<applicationSettings>
+
+  <Swissphone.SolutionKit.Desktop.UI.Interfaces.Properties.Settings>
+    <setting name="ThemeName" serializeAs="String">
+      <value></value>
+    </setting>
+  </Swissphone.SolutionKit.Desktop.UI.Interfaces.Properties.Settings>
+
+  <Swissphone.SolutionKit.Client.Modules.Push.SignalR.Settings>
+    <setting name="PushNotificationHubEndpoint" serializeAs="String">
+      <value>http://{host}/{alias}--v{ver}/SignalRHub/</value>
+    </setting>
+  </Swissphone.SolutionKit.Client.Modules.Push.SignalR.Settings>
+
+  <Swissphone.SolutionKit.ServiceClient.Core.Properties.Settings>
+    <setting name="ServiceHostAddress" serializeAs="String">
+      <value>http://{host}/</value>
+    </setting>
+    <setting name="AlarmFeedbackHostAddress" serializeAs="String">
+      <value>http://{host}/api/services/json/r/{alias}(v{ver})/AlarmFeedbackService/IAlarmStatusService/</value>
+    </setting>
+    <setting name="ApplicationName" serializeAs="String">
+      <value>{alias}--v{ver}/</value>
+    </setting>
+    <setting name="AdministrationServiceHostAddress" serializeAs="String">
+      <value>http://{host}/api/services/json/r/{alias}(v{ver})/Gateway/IAdministrationService/</value>
+    </setting>
+    <setting name="SystemGatewayAddress" serializeAs="String">
+      <value>http://{host}/api/services/json/r/{alias}(v{ver})/Gateway/IGateway/</value>
+    </setting>
+    <setting name="MessageMapperHostAddress" serializeAs="String">
+      <value>http://{host}/api/services/json/r/{alias}(v{ver})/MessageMapper/IMessageMapperStatus/</value>
+    </setting>
+  </Swissphone.SolutionKit.ServiceClient.Core.Properties.Settings>
+  
+  <Swissphone.SolutionKit.Desktop.Modules.Authentication.Properties.Settings>
+    <setting name="ServiceHostAddress" serializeAs="String">
+      <value>http://{host}/</value>
+    </setting>
+    <setting name="AuthenticationServerAddress" serializeAs="String">
+      <value>https://{host}//authentication/api/v{ver}/sessions/{alias}--v{ver}</value>
+    </setting>
+    <setting name="AuthorizationServerAddress" serializeAs="String">
+      <value>http://{host}/api/services/json/r/{alias}(v{ver})/Gateway/IGateway/permissions</value>
+    </setting>
+  </Swissphone.SolutionKit.Desktop.Modules.Authentication.Properties.Settings>
+  
+  <Swissphone.SolutionKit.Desktop.Modules.Alarm.Properties.Settings>
+    <setting name="AcknowledgeConfigurationServerUriPrefix" serializeAs="String">
+      <value>AcknowledgeConfiguration/</value>
+    </setting>
+    <setting name="MappingConfigurationServerUriPrefix" serializeAs="String">
+      <value>MappingConfiguration/</value>
+    </setting>
+    <setting name="AlarmUpdateInterval" serializeAs="String">
+      <value>10</value>
+    </setting>
+    <setting name="AlarmRotationInterval" serializeAs="String">
+      <value>20</value>
+    </setting>
+  </Swissphone.SolutionKit.Desktop.Modules.Alarm.Properties.Settings>
+</applicationSettings>

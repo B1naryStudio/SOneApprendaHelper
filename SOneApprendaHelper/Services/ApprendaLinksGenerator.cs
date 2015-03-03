@@ -33,6 +33,8 @@ namespace SOneApprendaHelper.Services
 
         #region Instance
 
+        private TextGenerator _textGenerator = new TextGenerator();
+
         private ApprendaLinksGenerator()
         {
             initPatterns();
@@ -45,7 +47,7 @@ namespace SOneApprendaHelper.Services
                      {
                          Id = x.Id,
                          Name = x.Name,
-                         Link = generateUrl(x.Pattern, settings)
+                         Link = _textGenerator.Generate(x.Pattern, settings)
                      });
         }
 
@@ -58,23 +60,7 @@ namespace SOneApprendaHelper.Services
             if (pattern == null)
                 return null;
 
-            return generateUrl(pattern.Pattern, settings);
-        }
-
-        private static string generateUrl(string pattern, ApprendaSettings settings)
-        {
-            // Make sure that host has a '/' at the end.
-            var host = settings.ApprendaBaseUrl;
-            if (!string.IsNullOrEmpty(host) && host.Last() != '/')
-            {
-                host += '/';
-            }
-
-            return pattern.Replace("{host}", host)
-                          .Replace("{alias}", settings.ApplicationAlias)
-                          .Replace("{aid}", settings.ApplicationId)
-                          .Replace("{ver}", settings.ApplicationVersion.ToString())
-                          .Replace("{vid}", settings.ApplicationVersionId);
+            return _textGenerator.Generate(pattern.Pattern, settings);
         }
 
         #endregion

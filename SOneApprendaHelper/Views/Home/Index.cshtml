@@ -1,9 +1,22 @@
-﻿@{
+﻿@model bool
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 <h2>Extensions</h2>
 
 <div>
-    @Html.ActionLink("Install Chrome extension", "GetChromeExtension", null, new { @class = "btn btn-default" })
+    @Html.ActionLink("Get Chrome extension", "GetChromeExtension", null, new { @class = "btn btn-default" })
 </div>
+
+<h2>Configs</h2>
+
+@if (!Model)
+{
+    <span>Please, set the @Html.ActionLink("Apprenda Settings", "Edit", "ApprendaSettings").</span>
+}
+else
+{
+    @Html.ActionLink("Get Client App Config", "GetClientAppConfig", null, new { @class = "btn btn-default" })
+}

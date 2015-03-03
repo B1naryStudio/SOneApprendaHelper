@@ -8,13 +8,12 @@ namespace SOneApprendaHelper.Models
 
         public ApprendaSettings()
         {
-            ApprendaBaseUrl = @"https://apps.swissphone-sone.ch/";
+            ApprendaBaseUrl = @"apps.swissphone-sone.ch";
             ApplicationVersion = 1;
         }
 
         // {host}
         [Required]
-        [DataType(DataType.Url)]
         [Display(Name = "Apprenda Base URL")]
         public string ApprendaBaseUrl { get; set; }
 

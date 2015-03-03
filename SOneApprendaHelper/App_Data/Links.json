@@ -2,41 +2,41 @@
     {
         "Id": "SqlConsole",
         "Name": "SQL Console",
-        "Pattern": "{host}developer/Pages/Applications/Version/ControlPanel/SQLConsole/?vid={vid}"
+        "Pattern": "https://{host}/developer/Pages/Applications/Version/ControlPanel/SQLConsole/?vid={vid}"
     },
     {
         "Id": "Lifecycle",
         "Name": "Lifecycle",
-        "Pattern": "{host}developer/Pages/Applications/Version/Lifecycle/default.aspx?vid={vid}"
+        "Pattern": "https://{host}/developer/Pages/Applications/Version/Lifecycle/default.aspx?vid={vid}"
     },
     {
         "Id": "Logs",
         "Name": "Logs",
-        "Pattern": "{host}developer/Pages/Logs/Logs.aspx"
+        "Pattern": "https://{host}/developer/Pages/Logs/Logs.aspx"
     },
     {
         "Id": "CloudControl",
         "Name": "Cloud Control",
-        "Pattern": "{host}developer/Pages/Applications/Version/ControlPanel/default.aspx?vid={vid}"
+        "Pattern": "https://{host}/developer/Pages/Applications/Version/ControlPanel/default.aspx?vid={vid}"
     },
     {
         "Id": "WebServices",
         "Name": "Web Services",
-        "Pattern": "{host}developer/Pages/Applications/Version/ControlPanel/Services/?vid={vid}"
+        "Pattern": "https://{host}/developer/Pages/Applications/Version/ControlPanel/Services/?vid={vid}"
     },
     {
         "Id": "AccountApps",
         "Name": "Account Applications",
-        "Pattern": "{host}account/Pages/Applications/"
+        "Pattern": "https://{host}/account/Pages/Applications/"
     },
     {
         "Id": "OperatorService",
         "Name": "Operator Service",
-        "Pattern": "{host}/api/services/json/r/{alias}(v{ver})/Gateway/IAdministrationService/operator"
+        "Pattern": "https://{host}//api/services/json/r/{alias}(v{ver})/Gateway/IAdministrationService/operator"
     },
     {
         "Id": "GatewayPermissions",
         "Name": "Gateway Permissions",
-        "Pattern": "{host}api/services/json/r/{alias}(v{ver})/Gateway/IGateway/permissions"
+        "Pattern": "https://{host}/api/services/json/r/{alias}(v{ver})/Gateway/IGateway/permissions"
     }
 ]
