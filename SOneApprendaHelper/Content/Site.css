@@ -15,3 +15,7 @@
 .dl-horizontal dt {
     white-space: normal;
 }
+
+textarea[readonly].default-cursor {
+    cursor: text;
+}

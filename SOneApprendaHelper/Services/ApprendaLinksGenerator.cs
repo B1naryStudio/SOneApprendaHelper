@@ -33,14 +33,14 @@ namespace SOneApprendaHelper.Services
 
         #region Instance
 
-        private TextGenerator _textGenerator = new TextGenerator();
+        private readonly TextGenerator _textGenerator = new TextGenerator();
 
         private ApprendaLinksGenerator()
         {
             initPatterns();
         }
 
-        public IEnumerable<ApprendaLink> GenerateAllLinks(ApprendaSettings settings)
+        public IEnumerable<ApprendaLink> GenerateApprendaLinks(ApprendaSettings settings)
         {
             return _patterns.Select(
                 x => new ApprendaLink
@@ -51,7 +51,7 @@ namespace SOneApprendaHelper.Services
                      });
         }
 
-        public string GenerateUrl(string id, ApprendaSettings settings)
+        public string GenerateApprendaUrl(string id, ApprendaSettings settings)
         {
             if (string.IsNullOrEmpty(id))
                 return null;
