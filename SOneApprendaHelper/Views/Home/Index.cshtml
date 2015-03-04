@@ -44,7 +44,7 @@ else
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
-                            <textarea readonly class="form-control default-cursor" rows="2">javascript: (function() { var a = document.querySelectorAll('[rolename="{{role}}"] [type="checkbox"]'); for (var i = 0; i < a.length; i++) { if (a[i].checked != "{{check}}") { a[i].click(); } } })()</textarea>
+                            <textarea readonly class="form-control default-cursor" rows="2">(function() { var a = document.querySelectorAll('[rolename="{{role}}"] [type="checkbox"]'); for (var i = 0; i < a.length; i++) { if (a[i].checked != {{check}}) { a[i].click(); } } })()</textarea>
                         </div>
                     </div>
                 </div>
