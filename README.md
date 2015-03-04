@@ -5,4 +5,4 @@ The main idea was to create a some kind of proxy with the direct links to the Ap
 
 Additionally, the website contains some usefull scripts and information for the development process.
 
-You can use the project as an example of using the newest and fresh technologies and frameworks.
+You can explore the project as an example of using the newest and fresh technologies and frameworks.
