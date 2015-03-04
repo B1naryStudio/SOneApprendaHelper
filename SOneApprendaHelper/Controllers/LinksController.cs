@@ -7,15 +7,17 @@ using SOneApprendaHelper.Services;
 
 namespace SOneApprendaHelper.Controllers
 {
-    public class ApprendaLinksController : Controller
+    public class LinksController : Controller
     {
         private readonly CookiesService _cookiesService = new CookiesService();
 
+        [HttpGet]
         public ActionResult List()
         {
             return View(getLinks());
         }
 
+        [HttpGet]
         public ContentResult JsonList()
         {
             var links = getLinks();
@@ -24,6 +26,7 @@ namespace SOneApprendaHelper.Controllers
             return Content(json, "text/json");
         }
 
+        [HttpGet]
         public ActionResult Navigate(string id)
         {
             var settings = _cookiesService.Get<ApprendaSettings>(

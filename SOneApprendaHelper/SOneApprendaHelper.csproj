@@ -108,11 +108,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\ApprendaLinksController.cs" />
-    <Compile Include="Controllers\ApprendaSettingsController.cs" />
+    <Compile Include="Controllers\LinksController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GuidesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -167,8 +168,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\ApprendaSettings\Edit.cshtml" />
-    <Content Include="Views\ApprendaLinks\List.cshtml" />
+    <Content Include="Views\Settings\Edit.cshtml" />
+    <Content Include="Views\Links\List.cshtml" />
+    <Content Include="Views\Guides\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -9,6 +9,7 @@ namespace SOneApprendaHelper.Controllers
         private readonly CookiesService _cookiesService = new CookiesService();
         private readonly TextGenerator _textGenerator = new TextGenerator();
 
+        [HttpGet]
         public ActionResult Index()
         {
             var settings = _cookiesService.Get<ApprendaSettings>(

@@ -5,7 +5,7 @@ using SOneApprendaHelper.Services;
 
 namespace SOneApprendaHelper.Controllers
 {
-    public class ApprendaSettingsController : Controller
+    public class SettingsController : Controller
     {
         private readonly CookiesService _cookiesService = new CookiesService();
 

@@ -32,7 +32,7 @@
     {
         "Id": "OperatorService",
         "Name": "Operator Service",
-        "Pattern": "https://{host}//api/services/json/r/{alias}(v{ver})/Gateway/IAdministrationService/operator"
+        "Pattern": "https://{host}/api/services/json/r/{alias}(v{ver})/Gateway/IAdministrationService/operator"
     },
     {
         "Id": "GatewayPermissions",
@@ -48,5 +48,20 @@
         "Id": "GroupSubscriptions",
         "Name": "Group Subscriptions",
         "Pattern": "https://{host}/account/Pages/Subscriptions/Group/SubscriptionListing.aspx?vid={vid}&gid={gid}"
+    },
+    {
+        "Id": "RuntimeBinaries",
+        "Name": "Runtime Binaries",
+        "Pattern": "https://{host}/developer/Pages/Applications/Version/Definition/RuntimeBinaries.aspx?vid={vid}"
+    },
+    {
+        "Id": "DemoteVersion",
+        "Name": "Demote Version",
+        "Pattern": "https://{host}/developer/Pages/Applications/Version/Lifecycle/StageChange.aspx?vid={vid}&action=Demote"
+    },
+    {
+        "Id": "PromoteVersion",
+        "Name": "Promote Version",
+        "Pattern": "https://{host}/developer/Pages/Applications/Version/Lifecycle/StageChange.aspx?vid={vid}&action=Promote"
     }
 ]
