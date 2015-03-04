@@ -18,7 +18,7 @@ else
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Link)
+                @Html.DisplayNameFor(model => model.ApprendaUrl)
             </th>
         </tr>
 
@@ -29,7 +29,7 @@ else
                     @Html.ActionLink(item.Name, "Navigate", new { id = item.Id }, new { target = "_blank" })
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Link)
+                    @Html.DisplayFor(modelItem => item.ApprendaUrl)
                 </td>
             </tr>
         }

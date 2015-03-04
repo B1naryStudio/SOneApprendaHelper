@@ -11,8 +11,10 @@ namespace SOneApprendaHelper.Models
         [Display(Name = "Name")]
         public string Name { get; set; }
 
+        public string LocalUrl { get; set; }
+
         [Display(Name = "URL")]
-        public string Link { get; set; }
+        public string ApprendaUrl { get; set; }
 
         #region Comparer
 

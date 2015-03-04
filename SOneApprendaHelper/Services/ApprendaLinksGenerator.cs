@@ -47,7 +47,7 @@ namespace SOneApprendaHelper.Services
                      {
                          Id = x.Id,
                          Name = x.Name,
-                         Link = _textGenerator.Generate(x.Pattern, settings)
+                         ApprendaUrl = _textGenerator.Generate(x.Pattern, settings)
                      });
         }
 

@@ -8,11 +8,14 @@ namespace SOneApprendaHelper.Services
         {
             var host = settings.ApprendaBaseUrl.TrimEnd('/');
 
-            return pattern.Replace("{host}", host)
+            return pattern.Replace("{email}", settings.ApprendaUserEmail)
+                          .Replace("{uid}", settings.ApprendaUserId)
+                          .Replace("{host}", host)
                           .Replace("{alias}", settings.ApplicationAlias)
                           .Replace("{aid}", settings.ApplicationId)
                           .Replace("{ver}", settings.ApplicationVersion.ToString())
-                          .Replace("{vid}", settings.ApplicationVersionId);
+                          .Replace("{vid}", settings.ApplicationVersionId)
+                          .Replace("{gid}", settings.SubscriptionGroupId);
         }
     }
 }
