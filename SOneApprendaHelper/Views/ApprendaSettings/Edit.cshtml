@@ -20,6 +20,28 @@
     <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
+            @Html.LabelFor(m => m.ApprendaUserEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(m => m.ApprendaUserEmail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.ApprendaUserEmail, "", new { @class = "text-danger" })
+            </div>
+            <span class="form-control-static col-md-4">
+                <em>e.g. <span class="text-info">email@example.com</span></em>
+            </span>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.ApprendaUserId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(m => m.ApprendaUserId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.ApprendaUserId, "", new { @class = "text-danger" })
+            </div>
+            <span class="form-control-static col-md-4">
+                <em>e.g. <span class="text-info">9c236888-4bac-e411-80c4-0050560115d4</span></em>
+            </span>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(m => m.ApprendaBaseUrl, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-4">
                 @Html.EditorFor(m => m.ApprendaBaseUrl, new { htmlAttributes = new { @class = "form-control" } })

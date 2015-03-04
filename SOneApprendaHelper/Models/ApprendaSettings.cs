@@ -12,6 +12,18 @@ namespace SOneApprendaHelper.Models
             ApplicationVersion = 1;
         }
 
+        // {email}
+        [Required]
+        [RegularExpression(@".+@.+", ErrorMessage = "Please enter a valid email address.")]
+        [Display(Name = "Apprenda User E-mail")]
+        public string ApprendaUserEmail { get; set; }
+
+        // {uid}
+        [Required]
+        [RegularExpression(@"\w{8}-\w{4}-\w{4}-\w{4}-\w{12}", ErrorMessage = "The field Apprenda User ID must match the format 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'.")]
+        [Display(Name = "Apprenda User ID")]
+        public string ApprendaUserId { get; set; }
+
         // {host}
         [Required]
         [Display(Name = "Apprenda Base URL")]

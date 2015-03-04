@@ -14,9 +14,7 @@ namespace SOneApprendaHelper.Controllers
             var settings = _cookiesService.Get<ApprendaSettings>(
                 ControllerContext.HttpContext.Request.Cookies, ApprendaSettings.SETTINGS_KEY);
 
-            var settingsAreSet = settings != null;
-
-            return View(settingsAreSet);
+            return View(settings);
         }
 
         [HttpGet]
