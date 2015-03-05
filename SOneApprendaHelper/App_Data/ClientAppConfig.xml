@@ -1,5 +1,4 @@
 ﻿<applicationSettings>
-
   <Swissphone.SolutionKit.Desktop.UI.Interfaces.Properties.Settings>
     <setting name="ThemeName" serializeAs="String">
       <value></value>
@@ -32,7 +31,7 @@
       <value>http://{host}/api/services/json/r/{alias}(v{ver})/MessageMapper/IMessageMapperStatus/</value>
     </setting>
   </Swissphone.SolutionKit.ServiceClient.Core.Properties.Settings>
-  
+
   <Swissphone.SolutionKit.Desktop.Modules.Authentication.Properties.Settings>
     <setting name="ServiceHostAddress" serializeAs="String">
       <value>http://{host}/</value>
@@ -43,8 +42,11 @@
     <setting name="AuthorizationServerAddress" serializeAs="String">
       <value>http://{host}/api/services/json/r/{alias}(v{ver})/Gateway/IGateway/permissions</value>
     </setting>
+    <setting name="AssignOrgUnitUri" serializeAs="String">
+      <value>http://{host}/{alias}--v{ver}/Resource/api/UserManagement/assignorgunit</value>
+    </setting>
   </Swissphone.SolutionKit.Desktop.Modules.Authentication.Properties.Settings>
-  
+
   <Swissphone.SolutionKit.Desktop.Modules.Alarm.Properties.Settings>
     <setting name="AcknowledgeConfigurationServerUriPrefix" serializeAs="String">
       <value>AcknowledgeConfiguration/</value>
