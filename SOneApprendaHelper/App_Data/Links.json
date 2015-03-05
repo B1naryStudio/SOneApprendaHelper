@@ -26,7 +26,7 @@
     },
     {
         "Id": "AccountApps",
-        "Name": "Account Applications",
+        "Name": "Account Apps",
         "Pattern": "https://{host}/account/Pages/Applications/"
     },
     {
@@ -41,7 +41,7 @@
     },
     {
         "Id": "AppSecurity",
-        "Name": "Application Security",
+        "Name": "App Security",
         "Pattern": "https://{host}/account/Pages/Tenant/Security/?vid={vid}&aid={aid}"
     },
     {
@@ -66,17 +66,22 @@
     },
     {
         "Id": "DeleteApp",
-        "Name": "Delete Application",
+        "Name": "Delete App",
         "Pattern": "https://{host}/developer/Pages/Applications/Delete.aspx?pid={aid}"
     },
     {
         "Id": "DeveloperApps",
-        "Name": "Developer Applications",
+        "Name": "Developer Apps",
         "Pattern": "https://{host}/developer/Pages/Applications/default.aspx"
     },
     {
         "Id": "PushServiceStatus",
-        "Name": "PushServiceStatus",
+        "Name": "Push Service Status",
         "Pattern": "http://{host}/{alias}--v{ver}/signalrhub/"
+    },
+    {
+        "Id": "SOC",
+        "Name": "SOC",
+        "Pattern": "https://{host}/soc/Applications/Versions/?vid={vid}"
     }
 ]
