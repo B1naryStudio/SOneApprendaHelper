@@ -73,5 +73,10 @@
         "Id": "DeveloperApps",
         "Name": "Developer Applications",
         "Pattern": "https://{host}/developer/Pages/Applications/default.aspx"
+    },
+    {
+        "Id": "PushServiceStatus",
+        "Name": "PushServiceStatus",
+        "Pattern": "http://{host}/{alias}--v{ver}/signalrhub/"
     }
 ]
