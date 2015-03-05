@@ -51,3 +51,71 @@
         }
     </li>
 </ol>
+
+<hr/>
+
+<h3>Delete Apprenda application</h3>
+
+<ol>
+    @Html.ActionLink("Delete", "Navigate", "Links", new { id = "DeleteApp" }, new { target = "_blank" }) the application.
+</ol>
+
+<hr/>
+
+<h3>Create Apprenda application</h3>
+
+<ol>
+    <li>
+        Create a new deployment archive:
+        <ol>
+            <li>Build Solution.</li>
+            <li>Publish <span class="text-danger">Server.MasterData.WebHost</span>.</li>
+            <li>Publish <span class="text-danger">Server.Push.SignalRHub</span>.</li>
+            <li>Run the script <span class="text-danger">Scripts\Configs\build_archive.ps1</span>.</li>
+        </ol>
+    </li>
+    <li>
+        Go to the @Html.ActionLink("Developer Applications", "Navigate", "Links", new { id = "DeveloperApps" }, new { target = "_blank" }),
+        fill in the <span class="text-danger">Application Name</span> and <span class="text-danger">Alias</span> fields
+        and click the <span class="label label-danger">Create Application</span> button.
+        <br />
+        <span class="text-danger">
+            <em>
+                To continue you should update the @Html.ActionLink("Apprenda Settings", "Edit", "Settings")
+                related to the application.
+            </em>
+        </span>
+    </li>
+    <li>
+        Go to the @Html.ActionLink("Runtime Binaries", "Navigate", "Links", new { id = "RuntimeBinaries" }, new { target = "_blank" })
+        and upload the deployment archive.
+    </li>
+    <li>
+        @Html.ActionLink("Promote", "Navigate", "Links", new { id = "PromoteVersion" }, new { target = "_blank" }) the new uploaded application version.
+    </li>
+    <li>
+        Go to the @Html.ActionLink("Account Applications", "Navigate", "Links", new { id = "AccountApps" }, new { target = "_blank" }),
+        find your application and click the respective <span class="label label-danger">Add Subscriptions For Testing</span> button. Add an additional subscription.
+    </li>
+    <li>
+        Go to the @Html.ActionLink("Group Subscriptions", "Navigate", "Links", new { id = "GroupSubscriptions" }, new { target = "_blank" })
+        and subscribe the <span class="text-danger">sONE Account</span>.
+    </li>
+    <li>
+        Go to the @Html.ActionLink("SQL Console", "Navigate", "Links", new { id = "SqlConsole" }, new { target = "_blank" }) and execute the script
+
+        @if (Model == null)
+        {
+            @Html.ActionLink("Add User to the Organizational Unit", "Index", "Home", null, new { target = "_blank" })@:.
+        }
+        else
+        {
+            <textarea readonly class="form-control default-cursor" rows="2">INSERT INTO F_Users([Guid], [Email], [OrganizationalUnit_id]) VALUES ('@Model.ApprendaUserId', '@Model.ApprendaUserEmail', 1)</textarea>
+        }
+    </li>
+    <li>
+        Go to the @Html.ActionLink("Application Security", "Navigate", "Links", new { id = "AppSecurity" }, new { target = "_blank" })
+        and execute the script @Html.ActionLink("Set all permissions", "Index", "Home", null, new { target = "_blank" })
+        for the development role to set all permissions.
+    </li>
+</ol>

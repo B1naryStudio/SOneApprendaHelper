@@ -40,7 +40,7 @@
         "Pattern": "https://{host}/api/services/json/r/{alias}(v{ver})/Gateway/IGateway/permissions"
     },
     {
-        "Id": "ApplicationSecurity",
+        "Id": "AppSecurity",
         "Name": "Application Security",
         "Pattern": "https://{host}/account/Pages/Tenant/Security/?vid={vid}&aid={aid}"
     },
@@ -63,5 +63,15 @@
         "Id": "PromoteVersion",
         "Name": "Promote Version",
         "Pattern": "https://{host}/developer/Pages/Applications/Version/Lifecycle/StageChange.aspx?vid={vid}&action=Promote"
+    },
+    {
+        "Id": "DeleteApp",
+        "Name": "Delete Application",
+        "Pattern": "https://{host}/developer/Pages/Applications/Delete.aspx?pid={aid}"
+    },
+    {
+        "Id": "DeveloperApps",
+        "Name": "Developer Applications",
+        "Pattern": "https://{host}/developer/Pages/Applications/default.aspx"
     }
 ]
