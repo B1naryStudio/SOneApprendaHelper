@@ -37,7 +37,7 @@
       <value>http://{host}/</value>
     </setting>
     <setting name="AuthenticationServerAddress" serializeAs="String">
-      <value>https://{host}//authentication/api/v{ver}/sessions/{alias}--v{ver}</value>
+      <value>https://{host}/authentication/api/v{ver}/sessions/{alias}--v{ver}</value>
     </setting>
     <setting name="AuthorizationServerAddress" serializeAs="String">
       <value>http://{host}/api/services/json/r/{alias}(v{ver})/Gateway/IGateway/permissions</value>
