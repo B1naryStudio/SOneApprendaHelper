@@ -38,7 +38,7 @@ namespace SOneApprendaHelper.Controllers
             var patternText = System.IO.File.ReadAllText(path);
             var generatedText = _textGenerator.Generate(patternText, settings);
 
-            return Content(generatedText, "text/xml");
+            return Content(generatedText, "text/plain");
         }
     }
 }
