@@ -33,20 +33,7 @@
         find your application and click the respective <span class="label label-danger">Add Subscriptions For Testing</span> button. Add an additional subscription.
     </li>
     <li>
-        Go to the @Html.ActionLink("Group Subscriptions", "Navigate", "Links", new { id = "GroupSubscriptions" }, new { target = "_blank" })
-        and subscribe the <span class="text-danger">sONE Account</span>.
-    </li>
-    <li>
-        Go to the @Html.ActionLink("SQL Console", "Navigate", "Links", new { id = "SqlConsole" }, new { target = "_blank" }) and execute the script
-
-        @if (Model == null)
-        {
-            @Html.ActionLink("Add User to the Organizational Unit", "Index", "Home", null, new { target = "_blank" })@:.
-        }
-        else
-        {
-            <textarea readonly class="form-control default-cursor" rows="2">INSERT INTO F_Users([Guid], [Email], [OrganizationalUnit_id]) VALUES ('@Model.ApprendaUserId', '@Model.ApprendaUserEmail', 1)</textarea>
-        }
+        Execute the @Html.ActionLink("Operator Service", "Navigate", "Links", new { id = "OperatorService" }, new { target = "_blank" }).
     </li>
 </ol>
 
@@ -94,20 +81,7 @@
         find your application and click the respective <span class="label label-danger">Add Subscriptions For Testing</span> button. Add an additional subscription.
     </li>
     <li>
-        Go to the @Html.ActionLink("Group Subscriptions", "Navigate", "Links", new { id = "GroupSubscriptions" }, new { target = "_blank" })
-        and subscribe the <span class="text-danger">sONE Account</span>.
-    </li>
-    <li>
-        Go to the @Html.ActionLink("SQL Console", "Navigate", "Links", new { id = "SqlConsole" }, new { target = "_blank" }) and execute the script
-
-        @if (Model == null)
-        {
-            @Html.ActionLink("Add User to the Organizational Unit", "Index", "Home", null, new { target = "_blank" })@:.
-        }
-        else
-        {
-            <textarea readonly class="form-control default-cursor" rows="2">INSERT INTO F_Users([Guid], [Email], [OrganizationalUnit_id]) VALUES ('@Model.ApprendaUserId', '@Model.ApprendaUserEmail', 1)</textarea>
-        }
+        Execute the @Html.ActionLink("Operator Service", "Navigate", "Links", new { id = "OperatorService" }, new { target = "_blank" }).
     </li>
     <li>
         Go to the @Html.ActionLink("Application Security", "Navigate", "Links", new { id = "AppSecurity" }, new { target = "_blank" })
