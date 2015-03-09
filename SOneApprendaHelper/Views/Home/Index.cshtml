@@ -7,7 +7,7 @@
 @if (Model == null)
 {
     <h2>Home Page</h2>
-    
+
     <span>Please, set the @Html.ActionLink("Apprenda Settings", "Edit", "Settings").</span>
 }
 else
@@ -22,29 +22,29 @@ else
         </div>
     </div>
 
-    <h2>Scripts</h2>
+    <h2>Generators</h2>
 
-    <div ng-app ng-init="role='Developer'; check=true; email='@Model.ApprendaUserEmail'; uid='@Model.ApprendaUserId'">
+    <div ng-app="generatorsApp" ng-init="role='Developer'; enablePermissionsCheck=true; email='@Model.ApprendaUserEmail'; uid='@Model.ApprendaUserId'; usernames='@Model.ApprendaUserEmail'; culture='en-US'; autoLoginCheck=true; resetSettingsCheck=true">
         <div class="form-horizontal col-md-12">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <strong>Set all permissions</strong>
+                    <strong>Script for setting all permissions</strong>
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
                         <label class="control-label col-md-2" for="scriptRoleInput">Role</label>
                         <div class="col-md-2">
-                            <input id="scriptRoleInput" class="form-control" type="text" ng-model="role" />
+                            <input id="scriptRoleInput" class="form-control" type="text" ng-model="role"/>
                         </div>
                         <div class="checkbox col-md-2">
                             <label>
-                                <input type="checkbox" ng-model="check"> Enable permissions
+                                <input type="checkbox" ng-model="enablePermissionsCheck"> Enable permissions
                             </label>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
-                            <textarea readonly class="form-control default-cursor" rows="2">(function() { var a = document.querySelectorAll('[rolename="{{role}}"] [type="checkbox"]'); for (var i = 0; i < a.length; i++) { if (a[i].checked != {{check}}) { a[i].click(); } } })()</textarea>
+                            <textarea readonly class="form-control default-cursor" rows="2">(function() { var a = document.querySelectorAll('[rolename="{{role}}"] [type="checkbox"]'); for (var i = 0; i < a.length; i++) { if (a[i].checked != {{enablePermissionsCheck}}) { a[i].click(); } } })()</textarea>
                         </div>
                     </div>
                 </div>
@@ -54,25 +54,87 @@ else
         <div class="form-horizontal col-md-12">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <strong>Add User to the Organizational Unit</strong>
+                    <strong>SQL-query for adding User to the Organizational Unit</strong>
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
                         <label class="control-label col-md-2" for="sqlEmailInput">User E-mail</label>
                         <div class="col-md-6">
-                            <input id="sqlEmailInput" class="form-control" type="text" ng-model="email" />
+                            <input id="sqlEmailInput" class="form-control" type="text" ng-model="email"/>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-md-2" for="sqlUserIdInput">User ID</label>
                         <div class="col-md-6">
-                            <input id="sqlUserIdInput" class="form-control" type="text" ng-model="uid" />
+                            <input id="sqlUserIdInput" class="form-control" type="text" ng-model="uid"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12">
                             <textarea readonly class="form-control default-cursor" rows="2">INSERT INTO F_Users([Guid], [Email], [OrganizationalUnit_id]) VALUES ('{{uid}}', '{{email}}', 1)</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal col-md-12" ng-controller="ClientCmdLine">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <strong>Client command-line arguments</strong>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="cultureSelectInput">Culture</label>
+                        <div class="col-md-2">
+                            <select id="cultureSelectInput" class="form-control" ng-model="culture">
+                                <option></option>
+                                <option value="en-US">English</option>
+                                <option value="de-DE">German</option>
+                                <option value="da-DK">Danish</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="usernamesInput">Username(s)</label>
+                        <div class="col-md-6">
+                            <input id="usernamesInput" class="form-control" type="text" ng-model="usernames"/>
+                            <em>
+                                <span class="text-info">One or multiple usernames separated with comma.</span></em>
+                        </div>
+                        <div class="checkbox col-md-offset-1 col-md-2">
+                            <label>
+                                <input type="checkbox" ng-model="autoLoginCheck"> Auto-login
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="passwordInput">Password</label>
+                        <div class="col-md-4">
+                            <input id="passwordInput" class="form-control" type="text" ng-model="password"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="settingsPathInput">Settings path</label>
+                        <div class="col-md-6">
+                            <input id="settingsPathInput" class="form-control" type="text" ng-model="settingsPath"/>
+                            <em>
+                                <span class="text-info">The path where application should store its settings.</span></em>
+                        </div>
+                        <div class="checkbox col-md-offset-1 col-md-2">
+                            <label>
+                                <input type="checkbox" ng-model="resetSettingsCheck"> Reset settings on start
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            > sONE.exe <textarea readonly class="form-control default-cursor" rows="1">{{cmdLineArgs()}}</textarea>
                         </div>
                     </div>
                 </div>
@@ -94,4 +156,39 @@ else
 @section scripts
 {
     @Scripts.Render("~/bundles/angular")
+
+    <script type="text/javascript">
+        angular.module("generatorsApp", [])
+            .controller("ClientCmdLine", function($scope) {
+                $scope.cmdLineArgs = function() {
+                    var cmdLine = "";
+
+                    if ($scope.culture) {
+                        cmdLine = "-c " + $scope.culture;
+                    }
+
+                    if ($scope.usernames) {
+                        cmdLine += " -u \"" + $scope.usernames + "\"";
+                    }
+
+                    if ($scope.password) {
+                        cmdLine += " -p \"" + $scope.password + "\"";
+                    }
+
+                    if ($scope.autoLoginCheck) {
+                        cmdLine += " -l";
+                    }
+
+                    if ($scope.settingsPath) {
+                        cmdLine += " -s \"" + $scope.settingsPath + "\"";
+                    }
+
+                    if ($scope.resetSettingsCheck) {
+                        cmdLine += " -r";
+                    }
+
+                    return $.trim(cmdLine);
+                };
+            });
+    </script>
 }
