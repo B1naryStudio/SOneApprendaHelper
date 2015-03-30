@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -8,36 +7,18 @@ using SOneApprendaHelper.Models;
 
 namespace SOneApprendaHelper.Services
 {
-    public class ApprendaLinksGenerator
+    public class ApprendaLinksGenerator : IApprendaLinksGenerator
     {
-        #region Static
+        private readonly ITextGenerator _textGenerator;
+        private readonly List<ApprendaLinkPattern> _patterns;
 
-        private static readonly Lazy<ApprendaLinksGenerator> _instance =
-            new Lazy<ApprendaLinksGenerator>(() => new ApprendaLinksGenerator());
-
-        private static List<ApprendaLinkPattern> _patterns;
-
-        public static ApprendaLinksGenerator Instance
+        public ApprendaLinksGenerator(ITextGenerator textGenerator)
         {
-            get { return _instance.Value; }
-        }
+            _textGenerator = textGenerator;
 
-        private static void initPatterns()
-        {
             var path = HttpContext.Current.Server.MapPath("~/App_Data/Links.json");
             var fileData = File.ReadAllText(path);
             _patterns = JsonConvert.DeserializeObject<List<ApprendaLinkPattern>>(fileData);
-        }
-
-        #endregion
-
-        #region Instance
-
-        private readonly TextGenerator _textGenerator = new TextGenerator();
-
-        private ApprendaLinksGenerator()
-        {
-            initPatterns();
         }
 
         public IEnumerable<ApprendaLink> GenerateApprendaLinks(ApprendaSettings settings)
@@ -62,7 +43,5 @@ namespace SOneApprendaHelper.Services
 
             return _textGenerator.Generate(pattern.Pattern, settings);
         }
-
-        #endregion
     }
 }

@@ -9,7 +9,14 @@ namespace SOneApprendaHelper.Controllers
 {
     public class LinksController : Controller
     {
-        private readonly CookiesService _cookiesService = new CookiesService();
+        private readonly ICookiesService _cookiesService;
+        private readonly IApprendaLinksGenerator _apprendaLinksGenerator;
+
+        public LinksController(ICookiesService cookiesService, IApprendaLinksGenerator apprendaLinksGenerator)
+        {
+            _cookiesService = cookiesService;
+            _apprendaLinksGenerator = apprendaLinksGenerator;
+        }
 
         [HttpGet]
         public ActionResult List()
@@ -35,7 +42,7 @@ namespace SOneApprendaHelper.Controllers
             if (settings == null)
                 return RedirectToAction("List");
 
-            var url = ApprendaLinksGenerator.Instance.GenerateApprendaUrl(id, settings);
+            var url = _apprendaLinksGenerator.GenerateApprendaUrl(id, settings);
             if (url == null)
                 return RedirectToAction("List");
 
@@ -50,7 +57,7 @@ namespace SOneApprendaHelper.Controllers
             if (settings == null)
                 return null;
 
-            var links = ApprendaLinksGenerator.Instance.GenerateApprendaLinks(settings).ToList();
+            var links = _apprendaLinksGenerator.GenerateApprendaLinks(settings).ToList();
             links.Sort(ApprendaLink.NameComparer);
 
             return links;

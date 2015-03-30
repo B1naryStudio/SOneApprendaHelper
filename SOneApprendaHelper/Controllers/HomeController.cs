@@ -6,8 +6,14 @@ namespace SOneApprendaHelper.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly CookiesService _cookiesService = new CookiesService();
-        private readonly TextGenerator _textGenerator = new TextGenerator();
+        private readonly ICookiesService _cookiesService;
+        private readonly ITextGenerator _textGenerator;
+
+        public HomeController(ICookiesService cookiesService, ITextGenerator textGenerator)
+        {
+            _cookiesService = cookiesService;
+            _textGenerator = textGenerator;
+        }
 
         [HttpGet]
         public ActionResult Index()

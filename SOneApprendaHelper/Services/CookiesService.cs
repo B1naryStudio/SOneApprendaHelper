@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace SOneApprendaHelper.Services
 {
-    public class CookiesService
+    public class CookiesService : ICookiesService
     {
         public T Get<T>(HttpCookieCollection cookies, string key)
         {

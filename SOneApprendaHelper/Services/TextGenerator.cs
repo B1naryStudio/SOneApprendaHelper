@@ -2,7 +2,7 @@
 
 namespace SOneApprendaHelper.Services
 {
-    public class TextGenerator
+    public class TextGenerator : ITextGenerator
     {
         public string Generate(string pattern, ApprendaSettings settings)
         {

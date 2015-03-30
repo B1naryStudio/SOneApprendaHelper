@@ -6,7 +6,12 @@ namespace SOneApprendaHelper.Controllers
 {
     public class GuidesController : Controller
     {
-        private readonly CookiesService _cookiesService = new CookiesService();
+        private readonly ICookiesService _cookiesService;
+
+        public GuidesController(ICookiesService cookiesService)
+        {
+            _cookiesService = cookiesService;
+        }
 
         [HttpGet]
         public ActionResult Index()

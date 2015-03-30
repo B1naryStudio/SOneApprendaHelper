@@ -7,7 +7,12 @@ namespace SOneApprendaHelper.Controllers
 {
     public class SettingsController : Controller
     {
-        private readonly CookiesService _cookiesService = new CookiesService();
+        private readonly ICookiesService _cookiesService;
+
+        public SettingsController(ICookiesService cookiesService)
+        {
+            _cookiesService = cookiesService;
+        }
 
         [HttpGet]
         public ActionResult Edit()
