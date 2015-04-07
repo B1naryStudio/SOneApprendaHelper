@@ -19,10 +19,10 @@
       <value>http://{host}/api/services/json/r/{alias}(v{ver})/AlarmFeedbackService/IAlarmStatusService/</value>
     </setting>
     <setting name="ApplicationName" serializeAs="String">
-      <value>{alias}--v{ver}/</value>
+      <value>{alias}--v{ver}</value>
     </setting>
     <setting name="AdministrationServiceHostAddress" serializeAs="String">
-      <value>http://{host}/api/services/json/r/{alias}(v{ver})/Gateway/IAdministrationService/</value>
+      <value>http://{host}/api/services/json/r/{alias}(v{ver})/AdministrationService/IAdministrationService/</value>
     </setting>
     <setting name="SystemGatewayAddress" serializeAs="String">
       <value>http://{host}/api/services/json/r/{alias}(v{ver})/Gateway/IGateway/</value>
@@ -40,10 +40,7 @@
       <value>https://{host}/authentication/api/v{ver}/sessions/{alias}--v{ver}</value>
     </setting>
     <setting name="AuthorizationServerAddress" serializeAs="String">
-      <value>http://{host}/api/services/json/r/{alias}(v{ver})/Gateway/IGateway/permissions</value>
-    </setting>
-    <setting name="AssignOrgUnitUri" serializeAs="String">
-      <value>http://{host}/{alias}--v{ver}/Resource/api/UserManagement/assignorgunit</value>
+      <value>http://{host}/api/services/json/r/{alias}(v{ver})/AdministrationService/IAdministrationService/permissions</value>
     </setting>
   </Swissphone.SolutionKit.Desktop.Modules.Authentication.Properties.Settings>
 

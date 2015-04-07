@@ -32,12 +32,12 @@
     {
         "Id": "OperatorService",
         "Name": "Operator Service",
-        "Pattern": "https://{host}/api/services/json/r/{alias}(v{ver})/Gateway/IAdministrationService/operator"
+        "Pattern": "https://{host}/api/services/json/r/{alias}(v{ver})/AdministrationService/IAdministrationService/operator"
     },
     {
         "Id": "GatewayPermissions",
         "Name": "Gateway Permissions",
-        "Pattern": "https://{host}/api/services/json/r/{alias}(v{ver})/Gateway/IGateway/permissions"
+        "Pattern": "https://{host}/api/services/json/r/{alias}(v{ver})/AdministrationService/IAdministrationService/permissions"
     },
     {
         "Id": "AppSecurity",
