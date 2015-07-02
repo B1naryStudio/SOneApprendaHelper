@@ -24,7 +24,7 @@ else
 
     <h2>Generators</h2>
 
-    <div ng-app="generatorsApp" ng-init="role='Developer'; enablePermissionsCheck=true; email='@Model.ApprendaUserEmail'; uid='@Model.ApprendaUserId'; usernames='@Model.ApprendaUserEmail'; culture='en-US'; autoLoginCheck=true; resetSettingsCheck=true">
+    <div ng-app="generatorsApp" ng-init="role='Developer'; enablePermissionsCheck=true; email='@Model.ApprendaUserEmail'; uid='@Model.ApprendaUserId'; usernames='@Model.ApprendaUserEmail'; culture='en-US'; autoLoginCheck=true; resetSettingsCheck=true; netPing=10">
         <div class="form-horizontal col-md-12">
             <div class="panel panel-info">
                 <div class="panel-heading">
@@ -102,7 +102,8 @@ else
                         <div class="col-md-6">
                             <input id="usernamesInput" class="form-control" type="text" ng-model="usernames"/>
                             <em>
-                                <span class="text-info">One or multiple usernames separated with comma.</span></em>
+                                <span class="text-info">One or multiple usernames separated with comma.</span>
+                            </em>
                         </div>
                         <div class="checkbox col-md-offset-1 col-md-2">
                             <label>
@@ -123,7 +124,8 @@ else
                         <div class="col-md-6">
                             <input id="settingsPathInput" class="form-control" type="text" ng-model="settingsPath"/>
                             <em>
-                                <span class="text-info">The path where application should store its settings.</span></em>
+                                <span class="text-info">The path where application should store its settings.</span>
+                            </em>
                         </div>
                         <div class="checkbox col-md-offset-1 col-md-2">
                             <label>
@@ -132,6 +134,20 @@ else
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="netPing">Ping interval</label>
+                        <div class="col-md-2">
+                            <input id="netPing" class="form-control" type="number" ng-model="netPing"/>
+                            
+                        </div>
+
+                        <div class="checkbox col-md-8">
+                            <em>
+                                <span class="text-info">The interval is in seconds. Set 0 to disable it. The default value is 10.</span>
+                            </em>
+                        </div>
+                    </div>
+                    
                     <div class="form-group">
                         <div class="col-md-12">
                             > sONE.exe <textarea readonly class="form-control default-cursor" rows="1">{{cmdLineArgs()}}</textarea>
@@ -185,6 +201,10 @@ else
 
                     if ($scope.resetSettingsCheck) {
                         cmdLine += " -r";
+                    }
+
+                    if ($scope.netPing !== 10) {
+                        cmdLine += " -n " + $scope.netPing;
                     }
 
                     return $.trim(cmdLine);
